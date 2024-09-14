@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alua's Portfolio</title>
+    <style>
+        /* Add any additional styles for the page here */
+        .video-container {
+            padding: 56.25% 0 0 0;
+            position: relative;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        function loadContent(page) {
+            const content = {
+                'about': `
+                    <h2>About Me</h2>
+                    <div style="text-align: center;">
+                        <p style="font-size: 24px; font-weight: bold;">
+                            Hello! I'm Alua. I am an aspiring technical artist from Los Angeles.<br>
+                            I love solving problems and chocolate chip cookies!
+                        </p>
+                        <p style="font-size: 18px; margin-top: 20px;">
+                            <a href="https://www.linkedin.com/in/fabdik/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #0077b5; font-weight: bold">LinkedIn</a> | 
+                            <a href="https://github.com/fabdik?tab=repositories" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #333; font-weight: bold">Github</a> 
+</p>
+
+    </div>
+                `,
+                'pipeline': `
+                    <h2>Pipeline TD</h2>
+                    <p>Integrated a custom plugin into the open-source Pyblish framework, featuring a user-friendly UI. This script assists previs/layout artists by allowing them to playblast specific cameras in the viewport or combine multiple camera views into a single video using the FFmpeg Python module.</p>
+                    <div class="video-container">
+                        <iframe src="https://player.vimeo.com/video/1003524388?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+                    </div>
+                `,
+                'procedural': `
+                    <h2>Procedural Generation</h2>
+                    <p>This project, inspired by Gotham City, includes a script for generating buildings in Houdini. The script allows control over various parameters such as height, rotation, number of buildings, lighting, and size using foreach nodes and Labs library nodes.</p>
+                    <div class="video-container">
+                        <iframe src="https://player.vimeo.com/video/1006441656?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+                    </div>
+
+                    <p style="margin-top: 20px;">I also developed a tool using VEX that generates points for various shapes, applies random colors to these points, and offers controls for the number of rows and columns.</p>
+                    <div class="video-container" style="margin-top: 20px;">
+                        <iframe src="https://player.vimeo.com/video/1006448356?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+                    </div>
+                `,
+                'rigging': `
+                    <h2>Rigging</h2>
+                    <p>This autorigging system uses Maya HumanIK, simplifying the skeleton creation process with easily movable locators. The system automatically generates a joint hierarchy based on these locators, and adjustments are saved into a JSON file for easy reuse.</p>
+                    <div class="video-container">
+                        <iframe src="https://player.vimeo.com/video/1006435542?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+                    </div>
+
+                    <p>The Rocket Rig in Maya provides advanced controls for dynamic animations, including:</p>
+                    <ul>
+                        <li>Wing Sine Movement</li>
+                        <li>IK/FK Eye Controls</li>
+                        <li>Deformers for Eyes, Fire, Feathers, and Wings</li>
+                        <li>Squash and Stretch for the body</li>
+                        <li>Parametric Animation for Feathers and Fire</li>
+                        <li>Feather MASH Integration</li>
+                    </ul>
+                    <div class="video-container" style="margin-top: 20px;">
+                        <iframe src="https://player.vimeo.com/video/1006442609?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+                    </div>
+                `,
+                'thesis': `
+                    <h2>Thesis</h2>
+                    <p>This section showcases my thesis work, where I explored innovative techniques in animation and VFX.</p>
+                    <div class="video-container">
+                        <iframe src="https://player.vimeo.com/video/1008012021?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen title="thesis_final"></iframe>
+                    </div>
+                `
+            };
+            document.getElementById('content').innerHTML = content[page];
+        }
+
+        window.onload = function() {
+            loadContent('about'); // Load 'About Me' by default
+        };
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Alua's Portfolio</h1>
+    </header>
+
+    <nav class="background">
+        <a href="#" onclick="loadContent('about')">About Me</a>
+        <a href="#" onclick="loadContent('pipeline')">Pipeline TD</a>
+        <a href="#" onclick="loadContent('procedural')">Procedural Generation</a>
+        <a href="#" onclick="loadContent('rigging')">Rigging</a>
+        <a href="#" onclick="loadContent('thesis')">Thesis</a>
+    </nav>
+
+    <div id="content">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alua's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Vimeo player script included globally -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+</body>
+</html>
